@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center;">
+    {% for product in products %}
+    <p style="margin-bottom: 0px;">{{ product[0].Name }} {{ product[0].Price }} р.</p>
+    <div class="mb-2">
+        <a href="/delete/{{ product[1] }}">Удалить товар</a>
+    </div>
+    {% endfor %}
+    <p>Сумма: {{ summ }} р.</p>
+    <div class="m-2">
+        <a href="/pay" class="btn btn-outline-dark mt-5
+        mb-2">Оплатить</a>
+    </div>
+</div>
+{% endblock %}
